@@ -1,0 +1,11 @@
+
+trigger: none
+pool: agent-dev-001  
+stages:
+  - stage: build
+    jobs:
+      - job: buildjob
+        steps:
+        
+        
+    
