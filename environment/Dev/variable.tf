@@ -62,5 +62,5 @@ type = map(object({
 }))
  }
 
-
+variable "mssql_name" {}
 
