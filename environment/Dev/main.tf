@@ -26,7 +26,15 @@ module "vm" {
   vms        = var.vms
 }
 
+module "mssql" {
+  depends_on = [ module.rg ]
+  source = "../../modules/sql"
+  mssql_name = var.mssql_name
+}
 
-
-
+module "mssqldatabase" {
+  depends_on = [ module.mssql ]
+  source = "../../modules/sql"
+  mssql_name = var.mssql_name
+}
 

@@ -6,9 +6,9 @@ terraform {
     }
     }
     backend "azurerm" {
-      resource_group_name  = "rg-dev-001"
-      storage_account_name = "backendstorageaccount001"
-      container_name       = "dev-container-001"
+      resource_group_name  = "test_rg_0001"
+      storage_account_name = "testrg0001storageaccount"
+      container_name       = "backendcontainer"
       key                  = "dev.terraform.tfstate"
     
     }
