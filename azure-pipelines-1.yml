@@ -16,4 +16,4 @@ stages:
         backendServiceArm: 'devserviceconnection001'
         backendAzureRmStorageAccountName: 'testrg0001storageaccount'
         backendAzureRmContainerName: 'backendcontainer'
-        backendAzureRmKey: 'auto.tfstate'
+        backendAzureRmKey: 'dev.terraform.tfstate'
