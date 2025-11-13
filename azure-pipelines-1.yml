@@ -13,6 +13,7 @@ stages:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
+        backendServiceArm: 'devserviceconnection001'
         backendAzureRmStorageAccountName: 'testrg0001storageaccount'
         backendAzureRmContainerName: 'backendcontainer'
         backendAzureRmKey: 'auto.tfstate'
