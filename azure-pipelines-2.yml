@@ -1,6 +1,5 @@
 trigger: none
 
-
 pool: dev-agent-001
   
 stages:
@@ -17,3 +16,14 @@ stages:
         backendAzureRmStorageAccountName: 'testrg0001storageaccount'
         backendAzureRmContainerName: 'backendcontainer'
         backendAzureRmKey: 'dev.terraform.tfstate'
+
+  - job: plan
+    steps:
+    - task: TerraformTask@5
+      inputs:
+        provider: 'azurerm'
+        command: 'plan'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
+        commandOptions: 'plan'
+        environmentServiceNameAzureRM: 'devserviceconnection001'
+        
