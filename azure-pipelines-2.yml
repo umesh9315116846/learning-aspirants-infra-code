@@ -21,7 +21,5 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'plan'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
-        commandOptions: 'plan'
+        workingDirectory: '''$(System.DefaultWorkingDirectory)/environment/Dev'''
         environmentServiceNameAzureRM: 'devserviceconnection001'
-        
