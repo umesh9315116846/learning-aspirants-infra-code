@@ -7,6 +7,10 @@ stages:
   jobs:
   - job: build
     steps:
+
+    - task: TerraformInstaller@1
+      inputs:
+        terraformVersion: 'latest'
     - task: TerraformTask@5
       inputs:
         provider: 'azurerm'
@@ -23,3 +27,4 @@ stages:
         command: 'plan'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
         environmentServiceNameAzureRM: 'devserviceconnection001'
+        
