@@ -22,6 +22,4 @@ stages:
         provider: 'azurerm'
         command: 'plan'
         workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
-        commandOptions: 'plan'
         environmentServiceNameAzureRM: 'devserviceconnection001'
-        
