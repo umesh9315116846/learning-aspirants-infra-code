@@ -58,6 +58,17 @@ stages:
   jobs:
     - job: apply
       steps:
+
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
+          backendServiceArm: 'bittubhaiya_service_connection'
+          backendAzureRmStorageAccountName: 'testrg0002storageaccount'
+          backendAzureRmContainerName: 'backendcontainer'
+          backendAzureRmKey: 'dev.terraform.tfstate'
+          
       - task: TerraformTask@5
         inputs:
           provider: 'azurerm'
