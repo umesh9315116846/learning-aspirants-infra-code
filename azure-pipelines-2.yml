@@ -39,4 +39,29 @@ stages:
         inputs:
           version: 'latest'
           type: 'repository'
-          target: '''$(System.DefaultWorkingDirectory)/environment/Dev'''
+          target: '$(System.DefaultWorkingDirectory)/environment/Dev'
+
+- stage: validation
+  pool: server
+  jobs:
+
+    - job: validation
+
+      steps:
+      - task: ManualValidation@1
+        inputs:
+          notifyUsers: 'umesh9315116846@gmail.com'
+
+
+
+- stage: apply 
+  jobs:
+    - job: apply
+      steps:
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'apply'
+          workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
+          environmentServiceNameAzureRM: 'bittubhaiya_service_connection'
+
