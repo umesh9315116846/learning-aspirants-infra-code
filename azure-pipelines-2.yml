@@ -29,18 +29,14 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/environment/Dev'
         environmentServiceNameAzureRM: 'bittubhaiya_service_connection'
 
-- stage: security_scan
-  jobs:
-  - job: tfsec_scan
-    
-    steps:
-    - script: |
-        sudo wget https://github.com/aquasecurity/tfsec/releases/latest/download/tfsec-linux-amd64 -O /usr/local/bin/tfsec
-        sudo chmod +x /usr/local/bin/tfsec
-        tfsec --format junit --out tfsec.xml
-      displayName: "Run tfsec"
 
-    - task: PublishTestResults@2
-      inputs:
-        testResultsFormat: 'JUnit'
-        testResultsFiles: 'tfsec.xml'
+- stage: scanning  
+  jobs:
+    - job: scanning
+      steps:
+      
+      - task: trivy@2
+        inputs:
+          version: 'latest'
+          type: 'repository'
+          target: '''$(System.DefaultWorkingDirectory)/environment/Dev'''
