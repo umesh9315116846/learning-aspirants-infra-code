@@ -59,7 +59,7 @@ vms = {
   }
 
   vm2 = {
-    vm_name              = "test-vm-02"
+    vm_name              = "test-vm-03"
     nic_name             = "test_vm_02"
     location             = "eastus"
     resource_group_name  = "test_rg_01"
@@ -75,16 +75,16 @@ vms = {
   }
 }
 
-mssql_name = {
-  sql1 = {
+# mssql_name = {
+#   sql1 = {
   
-    server_name                  = "test-sql-server"
-    location                     = "eastus"
-    resource_group_name          = "test_rg_01"
-    version                      = "12.0"
-    administator_login           = "server123"
-    administator_login_password  = "server@12345"
-    database_name                = "test_sql_database"
+#     server_name                  = "test-sql-server"
+#     location                     = "eastus"
+#     resource_group_name          = "test_rg_01"
+#     version                      = "12.0"
+#     administator_login           = "server123"
+#     administator_login_password  = "server@12345"
+#     database_name                = "test_sql_database"
    
-  }
-}
+#   }
+# }
